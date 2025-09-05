@@ -1,0 +1,284 @@
+/* ==========================
+   Global
+   ========================== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+body {
+  background-color: #f9f9f9; /* light neutral */
+  color: #111;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #111827; /* slate-900 */
+  color: #f3f4f6; /* slate-100 */
+}
+
+/* ==========================
+   Root variables
+   ========================== */
+:root {
+  --ring-light: rgba(59,130,246,0.2);
+  --ring-dark: rgba(99,102,241,0.35);
+}
+
+/* ==========================
+   Badge
+   ========================== */
+.badge {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.5rem .75rem;
+  border-radius:9999px;
+  border:1px solid #ddd;
+  background: #fff;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark .badge {
+  border-color: rgba(148,163,184,.35);
+  background: rgba(255,255,255,.1);
+}
+
+/* ==========================
+   Card & Hover Effects
+   ========================== */
+.card, .blog-card, .skill-card {
+  border-radius: 1.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover, .blog-card:hover, .skill-card:hover, .card:focus, .blog-card:focus, .skill-card:focus {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+body.dark .card, body.dark .blog-card, body.dark .skill-card {
+  background-color: rgba(31,41,55,0.9); /* slate-800 */
+  border-color: rgba(148,163,184,0.35);
+}
+
+/* ==========================
+   Input & CTA
+   ========================== */
+.input {
+  width:100%;
+  padding:.75rem 1rem;
+  border-radius:.9rem;
+  border:1px solid #ddd;
+  background:#fff;
+  outline:none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  color: #111;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 4px var(--ring-light);
+  border-color: transparent;
+}
+
+body.dark .input {
+  background: rgba(255,255,255,0.05);
+  color: #f3f4f6;
+}
+
+body.dark .input:focus {
+  box-shadow: 0 0 0 4px var(--ring-dark);
+}
+
+.cta {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  color:#1d4ed8;
+  cursor:pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.cta::after { content: '↗'; font-size:.875rem; }
+
+.cta:hover { transform: scale(1.05); color:#2563eb; }
+
+/* ==========================
+   About Section
+   ========================== */
+.about-section {
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:50px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex:1;
+  text-align:center;
+}
+
+.about-text h2 {
+  font-size:2.5rem;
+  margin-bottom:20px;
+  color: #111;
+}
+
+body.dark .about-text h2 {
+  color: #f3f4f6;
+}
+
+.about-text p {
+  font-size:1.2rem;
+  line-height:1.8;
+  color: #555;
+}
+
+body.dark .about-text p {
+  color: #d1d5db;
+}
+
+.about-photo img {
+  width:280px;
+  height:auto;
+  border-radius:50%;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-photo img:hover {
+  transform: scale(1.1);
+  box-shadow:0 12px 35px rgba(0,0,0,0.3);
+}
+
+@media (max-width:768px){
+  .about-section { flex-direction: column; padding:40px 5%; }
+  .about-photo img { width:200px; }
+}
+
+/* ==========================
+   Scroll Reveal
+   ========================== */
+.scroll-reveal {
+  opacity:0;
+  transform:translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ==========================
+   Aurora / Background Blur
+   ========================== */
+.aurora {
+  position:absolute;
+  inset:-40% -20% auto -20%;
+  height:70vh;
+  background: radial-gradient(50% 60% at 50% 0%, rgba(100,180,255,.08), transparent 70%),
+              radial-gradient(40% 60% at 20% 0%, rgba(100,255,180,.05), transparent 70%);
+  filter: blur(60px);
+  opacity:0.5;
+}
+
+body.dark .aurora {
+  background: radial-gradient(50% 60% at 50% 0%, rgba(255,107,214,.18), transparent 60%),
+              radial-gradient(40% 60% at 20% 0%, rgba(107,255,224,.12), transparent 60%);
+  opacity:0.7;
+}
+
+/* ==========================
+   Timeline / Experience
+   ========================== */
+.timeline::before {
+  content:"";
+  position:absolute;
+  left:0.5rem;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#cbd5e1;
+}
+
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  left:0.25rem;
+  top:0.5rem;
+  width:0.75rem;
+  height:0.75rem;
+  background:#2563eb;
+  border-radius:9999px;
+  border:2px solid white;
+  z-index:10;
+}
+
+/* ==========================
+   Contact Form
+   ========================== */
+.form-group {
+  position:relative;
+  margin-bottom:1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  outline:none;
+  font-size:16px;
+  background:#fff;
+  color:#111;
+}
+
+body.dark .form-group input,
+body.dark .form-group textarea {
+  background: rgba(255,255,255,0.05);
+  color: #f3f4f6;
+  border-color: #555;
+}
+
+.form-group label {
+  position:absolute;
+  left:12px;
+  top:12px;
+  background:#fff;
+  color:#888;
+  font-size:16px;
+  transition:0.3s ease;
+  pointer-events:none;
+  padding:0 4px;
+}
+
+body.dark .form-group label { background: rgba(31,41,55,0.9); color:#ccc; }
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  top:-8px; left:8px; font-size:12px; color:#1d4ed8;
+}
+
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top:-8px; left:8px; font-size:12px; color:#1d4ed8;
+}
+
+/* ==========================
+   Media Queries
+   ========================== */
+@media (max-width:480px){
+  .about-text h2 { font-size:1.8rem; }
+  .about-text p { font-size:1rem; }
+  .project-row .card { flex:0 0 90%; max-width:250px; }
+}

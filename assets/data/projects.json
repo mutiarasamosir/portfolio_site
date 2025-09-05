@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Retail Demand Forecasting (SARIMAX)",
+    "summary": "Forecasting daily demand with promo & epidemic features for smarter inventory decisions.",
+    "description": "Built end-to-end time series pipeline with SARIMAX, baseline MA7, diagnostics, and scenario analysis. Included feature engineering from promo calendars and external shock markers (epidemic).",
+    "category": "ml",
+    "tags": [
+      "Python",
+      "Time Series",
+      "SARIMAX",
+      "Retail"
+    ],
+    "github": "https://github.com/mutiarasamosir/Retail-Store-Inventory-and-Demand-Forecasting",
+    "image": "assets/img/retail_forecasting.jpg"
+  },
+  {
+    "title": "Sleep Health & Lifestyle – Descriptive Statistics",
+    "summary": "Analysis of central tendency, dispersion, skewness, and classification of skewness types for each column.",
+    "description": "This code displays information on central tendency (mean, median, mode), measures of dispersion (range, variance, standard deviation), skewness values, and skewness types (positive, negative, or symmetric) for each column in the Sleep Health and Lifestyle Dataset.",
+    "category": "data-science",
+    "tags": [
+      "Pandas",
+      "Seaborn",
+      "EDA",
+      "Health"
+    ],
+    "github": "https://github.com/mutiarasamosir/Pemusatan-dan-Penyebaran-Data",
+    "image": "assets/img/sleep.jpg"
+  },
+  {
+    "title": "Sleep Health and Lifestyle Data Transformation",
+    "summary": "Checking for missing values and outliers to improve data quality.",
+    "description": "In this Sleep Health and Lifestyle dataset, missing values and outliers were checked so that further analysis would be more accurate and unbiased. The presence of missing values and outliers can affect the analysis results, so data transformation is very important.",
+    "category": "data-science",
+    "tags": [
+      "Pandas",
+      "Seaborn",
+      "EDA",
+      "Health"
+    ],
+    "github": "https://github.com/mutiarasamosir/Transformasi-Data/tree/main",
+    "image": "assets/img/sleep2.jpg"
+  },
+  {
+    "title": "Personal Portfolio \u2014 This Website",
+    "summary": "Responsive, interactive, dark-mode portfolio with filters and modal project details.",
+    "description": "Handcrafted HTML/CSS/JS + Tailwind. Features: dark/light theme, search & filter projects, AOS animations, radar skills, and a clean content structure ready for expansion.",
+    "category": "web",
+    "tags": [
+      "HTML",
+      "Tailwind",
+      "AOS",
+      "Chart.js"
+    ],
+    "github": "https://github.com/yourhandle/portfolio-site",
+    "demo": ""
+  },
+  {
+  "title": "Simulasi Monitoring Suhu — Realtime IoT System",
+  "summary": "Realtime temperature monitoring system with anomaly detection and dashboard visualization.",
+  "description": "Built with Python, PostgreSQL, and Docker. Simulates sensor data streaming to a database, performs anomaly detection, and provides visualization via Metabase dashboard. Includes modular scripts for sensor simulation, database handling, and anomaly detection, orchestrated with Docker Compose.",
+  "category": "iot",
+  "tags": [
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "Metabase",
+    "Realtime"
+  ],
+  "github": "https://github.com/mutiarasamosir/Simulasi-Monitoring-Suhu",
+  "image": "assets/img/monitoring.jpg"
+}
+
+]
